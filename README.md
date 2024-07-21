@@ -63,6 +63,9 @@ docker tag ollama-api-i:latest <your-docker-registry>/ollama-api-i:latest
 docker push <your-docker-registry>/ollama-api-i:latest
 ```
 
+![Screenshot from 2024-07-21 18-28-05](https://github.com/user-attachments/assets/319937fa-84ef-4be5-b18e-38a151d6b9ad)
+
+
 ### 3. Create Kubernetes Deployment
 
 **ollama-deployment.yaml:**
@@ -162,12 +165,18 @@ You should see something like this:
 NAME             TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
 ollama-service   LoadBalancer   10.107.249.83   <pending>        80:31415/TCP   5m
 ```
+![Screenshot from 2024-07-21 18-32-09](https://github.com/user-attachments/assets/aa2d614f-dda4-4960-8dd0-ad65b867767c)
+
+
 
 For NodePort, access the service using the node's IP and the `nodePort`:
 
 ```http
 http://<node-ip>:30007
 ```
+
+![Screenshot from 2024-07-21 18-33-04](https://github.com/user-attachments/assets/47077cd0-ba91-4687-9a72-f50d8a1d12e2)
+
 
 ### 7. Set Up Horizontal Pod Autoscaler (HPA)
 
